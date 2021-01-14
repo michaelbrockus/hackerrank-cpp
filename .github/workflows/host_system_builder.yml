@@ -20,7 +20,7 @@ jobs:
       env:
         CXX: ccache g++-10
     - run: cppcheck --project=build/compile_commands.json
-    - run: scan-build compile -C build
+    - run: scan-build meson compile -C build
     - uses: actions/upload-artifact@v2
       if: failure()
       with:
