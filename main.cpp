@@ -15,7 +15,9 @@ using namespace std;
 
 std::vector<std::string> splitString(std::string);
 
-
+//
+// Complete the miniMaxSum function below.
+//
 long aVeryBigSum(std::vector<long> ar)
 {
     long int count = 0;
