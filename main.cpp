@@ -27,7 +27,7 @@ vector<string> split(const string &);
 int birthdayCakeCandles(vector<int> candles) {
     auto number = 0;
     auto current = 0;
-    for (auto iter = 0 ; iter < candles.size(); ++iter)
+    for (size_t iter = 0 ; iter < candles.size(); ++iter)
     {
         if (candles[iter] > current)
         {
@@ -36,7 +36,7 @@ int birthdayCakeCandles(vector<int> candles) {
 
     } // end for
 
-    for (auto iter = 0; iter < candles.size(); ++iter)
+    for (size_t iter = 0; iter < candles.size(); ++iter)
     {
         if (candles[iter] < current)
         {
