@@ -6,9 +6,11 @@
 #include <iostream>
 #include <cstdlib>
 
+using namespace std;
+
 // main is where program execution starts
-int main(void)
+int main()
 {
-    std::cout << "Lets do some HackerRank stuff" << std::endl;
+    std::cout << "Hello, World!" << std::endl;
     return EXIT_SUCCESS;
 } // end of function main
