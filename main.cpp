@@ -11,6 +11,6 @@ using namespace std;
 // main is where program execution starts
 int main()
 {
-    std::cout << "Hello, World!" << std::endl;
+    cout << "Hello, World!" << endl;
     return EXIT_SUCCESS;
 } // end of function main
