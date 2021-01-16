@@ -29,7 +29,7 @@ long aVeryBigSum(std::vector<long> ar)
 } // end of function simpleArraySum
 
 // main is where program execution starts
-int main(void)
+int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
