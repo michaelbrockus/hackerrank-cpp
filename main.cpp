@@ -22,14 +22,14 @@ int main()
         {7, "seven"}, {8, "eight"}, {9, "nine"}
     };
 
-    for (int i = a; i <= b; ++i)
+    for (int iter = a; iter <= b; ++iter)
     {
-        if (i >= 1 && i <= 9)
+        if (iter >= 1 && iter <= 9)
         {
-            auto search = nums.find(i);
+            auto search = nums.find(iter);
             cout << search->second << endl;
         } // end if
-        else if (i % 2 == 0)
+        else if (iter % 2 == 0)
         {
             cout << "even" << endl;
         } // end else if
