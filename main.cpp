@@ -7,6 +7,8 @@
 #include <vector>
 #include <cstdlib>
 
+using namespace std;
+
 // main is where program execution starts
 int main(void)
 {
