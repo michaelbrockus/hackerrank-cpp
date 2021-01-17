@@ -19,7 +19,7 @@ int main(void)
     for (size_t iter : vect)
     {
         cin >> temporary;
-        vect.push_back(temporary);
+        vect[iter] = temporary;
     } // eng for
     
     for (size_t iter : vect)
