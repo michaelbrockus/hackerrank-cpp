@@ -14,13 +14,13 @@ int main(void)
     auto temporary = 0;
     auto summary = 0;        
     
-    for (auto iter : vect)
+    for (size_t iter : vect)
     {
         cin >> temporary;
         vect.push_back(temporary);
     } // eng for
     
-    for (auto iter : vect)
+    for (size_t iter : vect)
     {
         summary += iter;
     } // end for
