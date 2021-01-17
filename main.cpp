@@ -14,7 +14,7 @@
 using namespace std;
 
 // main is where program execution starts
-int main(void)
+int main()
 {
     int n;
     cin >> n;
