@@ -5,7 +5,7 @@
 * * *
 
 The `HackerRank` project is a list of solutions for problems found on the
-`HackerRank` website written in `C++`. It would important to mention that
+`HackerRank` website written in `C++`. It would be important to mention that
 each solution is stored in its own git branch, so the best way to view the
 written solutions for their corresponding problem can be done by switching
 git branches.
