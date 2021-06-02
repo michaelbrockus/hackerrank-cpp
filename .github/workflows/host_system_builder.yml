@@ -10,8 +10,8 @@ jobs:
   macos:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2.3.2
-    - uses: actions/setup-python@v2.2.1
+    - uses: actions/checkout@v2.3.4
+    - uses: actions/setup-python@v2.2.2
       with:
         python-version: '3.9.x'
     - run: pip install meson ninja scan-build
@@ -30,8 +30,8 @@ jobs:
   windows:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-python@v1
+    - uses: actions/checkout@v2.3.4
+    - uses: actions/setup-python@v2.2.2
       with:
         python-version: '3.9.x'
     - uses: msys2/setup-msys2@v2
@@ -50,12 +50,28 @@ jobs:
         name: Windows_Meson_Testlog
         path: build/meson-logs/testlog.txt
 
+  chrome_book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: nanasess/setup-chromedriver@v1.0.5
+    - uses: actions/setup-python@v2.2.1
+      with:
+        python-version: '3.9.x'
+    - run: chromedriver --url-base=/wd/hub &
+    - run: |
+        sudo apt-get install g++ cppcheck ccache -y &&
+        python3 -m pip install meson ninja
+    - run: |
+        meson setup build -Dwith_tests=enabled &&
+        cppcheck --project=build/compile_commands.json &&
+        meson compile -C build
   ubuntu_linux:
     runs-on: ubuntu-latest
     container:
       image: "michaelbrockus/ubuntu-host:latest"
     steps:
-    - uses: actions/checkout@v2.3.2
+    - uses: actions/checkout@v2.3.4
     - run: |
         meson setup build &&
         cppcheck --project=build/compile_commands.json &&
@@ -67,43 +83,40 @@ jobs:
     container:
       image: "michaelbrockus/debian-host:latest"
     steps:
-    - uses: actions/checkout@v2.3.2
+    - uses: actions/checkout@v2.3.4
     - run: |
         meson setup build &&
         cppcheck --project=build/compile_commands.json &&
         meson compile -C build
       working-directory: .
-
   fedora_linux:
     runs-on: ubuntu-latest
     container:
       image: "michaelbrockus/fedora-host:latest"
     steps:
-    - uses: actions/checkout@v2.3.2
+    - uses: actions/checkout@v2.3.4
     - run: |
         meson setup build &&
         cppcheck --project=build/compile_commands.json &&
         meson compile -C build
       working-directory: .
-
   arch_linux:
     runs-on: ubuntu-latest
     container:
       image: "michaelbrockus/archlinux-host:latest"
     steps:
-    - uses: actions/checkout@v2.3.2
+    - uses: actions/checkout@v2.3.4
     - run: |
         meson setup build &&
         cppcheck --project=build/compile_commands.json &&
         meson compile -C build
       working-directory: .
-
   opensuse_linux:
     runs-on: ubuntu-latest
     container:
       image: "michaelbrockus/opensuse-host:latest"
     steps:
-    - uses: actions/checkout@v2.3.2
+    - uses: actions/checkout@v2.3.4
     - run: |
         meson setup build &&
         cppcheck --project=build/compile_commands.json &&
