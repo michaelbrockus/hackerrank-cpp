@@ -50,6 +50,23 @@ jobs:
         name: Windows_Meson_Testlog
         path: build/meson-logs/testlog.txt
 
+  chrome_book:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: nanasess/setup-chromedriver@v1.0.5
+    - uses: actions/setup-python@v2.2.1
+      with:
+        python-version: '3.9.x'
+    - run: chromedriver --url-base=/wd/hub &
+    - run: |
+        sudo apt-get install g++ cppcheck ccache -y &&
+        python3 -m pip install meson ninja
+    - run: |
+        meson setup build -Dwith_tests=enabled &&
+        cppcheck --project=build/compile_commands.json &&
+        meson compile -C build
+
   ubuntu_linux:
     runs-on: ubuntu-latest
     container:
