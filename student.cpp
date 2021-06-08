@@ -9,12 +9,12 @@
 #include <cstdlib>
 
 
-void Student::set_first_name(std::string new_first_name)
+void Student::set_first_name(const std::string &new_first_name)
 {
     first_name = new_first_name;
 }
 
-void Student::set_last_name(std::string new_last_name)
+void Student::set_last_name(const std::string &new_last_name)
 {
     last_name = new_last_name;
 }
