@@ -4,9 +4,7 @@
 // gmail: <michaelbrockus@gmail.com>
 //
 #include "student.hpp"
-#include <iostream>
 #include <sstream>
-#include <cstdlib>
 
 
 void Student::set_first_name(const std::string &new_first_name)
