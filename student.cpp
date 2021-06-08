@@ -5,6 +5,7 @@
 //
 #include "student.hpp"
 #include <iostream>
+#include <sstream>
 #include <cstdlib>
 
 
