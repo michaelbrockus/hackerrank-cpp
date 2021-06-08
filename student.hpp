@@ -17,8 +17,8 @@ class Student {
     int age;
 
     public:
-    void set_first_name(std::string new_first_name);
-    void set_last_name(std::string new_last_name);
+    void set_first_name(const std::string &new_first_name);
+    void set_last_name(const std::string &new_last_name);
     void set_standard(const int new_standard);    
     void set_age(const int new_age);
     std::string to_string();
